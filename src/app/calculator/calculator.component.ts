@@ -9,9 +9,12 @@ export class CalculatorComponent implements OnInit {
   amount: number;
   tenPercentTip: number;
   tenPercentTotal: number;
-  fifteenPercent: number;
-  twentyPercent: number;
-  twentyfivePercent: number;
+  fifteenPercentTip: number;
+  fifteenPercentTotal: number;
+  twentyPercentTip: number;
+  twentyPercentTotal: number;
+  twentyfivePercentTip: number;
+  twentyfivePercentTotal: number;
 
   constructor() { }
 
@@ -21,9 +24,12 @@ export class CalculatorComponent implements OnInit {
   onAmountChange() {
     this.tenPercentTip = this.amount * .1;
     this.tenPercentTotal = this.amount + (this.amount * .1);
-    this.fifteenPercent = this.amount * .15;
-    this.twentyPercent = this.amount * .2;
-    this.twentyfivePercent = this.amount * .25;
+    this.fifteenPercentTip = this.amount * .15;
+    this.fifteenPercentTotal = this.amount + (this.amount * .15);
+    this.twentyPercentTip = this.amount * .2;
+    this.twentyPercentTotal = this.amount + (this.amount * .2);
+    this.twentyfivePercentTip = this.amount * .25;
+    this.twentyfivePercentTotal = this.amount + (this.amount * .25);
   }
 
   convertString() {
