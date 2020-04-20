@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form>
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="amount">Amount: </label>
+            <input
+              [(ngModel)]="amount"
+              id="amount"
+              name="amount"
+              type="number"
+              (change)="onAmountChange()"
+              class="form-control">
+        </div>
+      </div>
+    </form>
+    <hr>
+    <p>
+      10%: {{ tenPercent }}
+      <br>
+      15%: {{ fifteenPercent }}
+      <br>
+      20%: {{ twentyPercent }}
+      <br>
+      25%: {{ twentyfivePercent }}
+    </p>
+  </div>
+</div>
