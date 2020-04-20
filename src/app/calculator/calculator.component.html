@@ -1,28 +1,41 @@
-<div class="row">
-  <div class="col-xs-12">
-    <form>
-      <div class="row">
-        <div class="col-sm-5 form-group">
-          <label for="amount">Amount: </label>
-            <input
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <form>
+        <div class="row">
+          <div class="col-sm-5 form-group">
+            <label for="amount">Amount:
+              <input
               [(ngModel)]="amount"
               id="amount"
               name="amount"
               type="number"
               (change)="onAmountChange()"
               class="form-control">
+            </label>
+          </div>
         </div>
-      </div>
-    </form>
-    <hr>
-    <p>
-      10%: {{ tenPercent }}
-      <br>
-      15%: {{ fifteenPercent }}
-      <br>
-      20%: {{ twentyPercent }}
-      <br>
-      25%: {{ twentyfivePercent }}
-    </p>
+        <div>
+          <!-- Radio Buttons don't work yet -->
+          <mat-radio-group>
+            <mat-radio-button value="noRound">No Round</mat-radio-button>
+            <mat-radio-button value="Round">Round Up</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </form>
+      <hr>
+      <p>
+        10%
+        <br>
+        {{ tenPercentTip | currency }} {{ tenPercentTotal | currency }}
+        <br>
+        15%: {{ fifteenPercent }}
+        <br>
+        20%: {{ twentyPercent }}
+        <br>
+        25%: {{ twentyfivePercent }}
+      </p>
+    </div>
   </div>
 </div>
+

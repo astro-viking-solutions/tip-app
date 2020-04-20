@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
   amount: number;
-  tenPercent: number;
+  tenPercentTip: number;
+  tenPercentTotal: number;
   fifteenPercent: number;
   twentyPercent: number;
   twentyfivePercent: number;
@@ -18,10 +19,15 @@ export class CalculatorComponent implements OnInit {
   }
 
   onAmountChange() {
-    this.tenPercent = this.amount * .1;
+    this.tenPercentTip = this.amount * .1;
+    this.tenPercentTotal = this.amount + (this.amount * .1);
     this.fifteenPercent = this.amount * .15;
     this.twentyPercent = this.amount * .2;
     this.twentyfivePercent = this.amount * .25;
+  }
+
+  convertString() {
+
   }
 
 }
