@@ -1,44 +1,32 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <form>
-        <div class="row">
-          <div class="col-sm-5 form-group">
-            <label for="amount">Amount:
-              <input
-              [(ngModel)]="amount"
-              id="amount"
-              name="amount"
-              type="number"
-              class="form-control">
-            </label>
-          </div>
-        </div>
-        <div>
-          <!-- Checkbox doesn't work yet -->
-          <mat-checkbox>Round to Whole Dollar</mat-checkbox>
-        </div>
-      </form>
-      <hr>
-   <!--Tip Output-->
-      <p>
-        10%
-        {{ amount * .1 | currency }}
-        {{ amount + amount * .1 | currency }}
-        <br>
-        15%:
-        {{ amount * .15 | currency }}
-        {{ amount + amount * .15 | currency }}
-        <br>
-        20%:
-        {{ amount * .2 | currency }}
-        {{ amount + amount * .2 | currency }}
-        <br>
-        25%:
-        {{ amount * .25 | currency }}
-        {{ amount + amount * .25 | currency }}
-      </p>
-    </div>
-  </div>
-</div>
+ <mat-form-field appearance="outline">
+   <mat-label>Total Amount</mat-label>
+    <input matInput
+      [(ngModel)]="amount"
+      id="amount"
+      name="amount"
+      type="number"
+      class="form-control">
+  </mat-form-field>
+ <br>
+ <!-- Checkbox doesn't work yet -->
+ <mat-checkbox>Round to Whole Dollar</mat-checkbox>
+  <!--Tip Output-->
+  10%
+  {{ amount * .1 | currency }}
+  {{ amount + amount * .1 | currency }}
+  <br>
+  15%:
+  {{ amount * .15 | currency }}
+  {{ amount + amount * .15 | currency }}
+  <br>
+  20%:
+  {{ amount * .2 | currency }}
+  {{ amount + amount * .2 | currency }}
+  <br>
+  25%:
+  {{ amount * .25 | currency }}
+  {{ amount + amount * .25 | currency }}
+
+
+
 
