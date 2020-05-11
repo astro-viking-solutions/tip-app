@@ -1,31 +1,42 @@
- <mat-form-field appearance="outline">
-   <mat-label>Total Amount</mat-label>
-    <input matInput
-      [(ngModel)]="amount"
-      id="amount"
-      name="amount"
-      type="number"
-      class="form-control">
-  </mat-form-field>
- <br>
- <!-- Checkbox doesn't work yet -->
- <mat-checkbox>Round to Whole Dollar</mat-checkbox>
+<div style="padding: 10px">
+  <input matInput
+         [(ngModel)]="amount"
+         placeholder="Total Amount"
+         id="amount"
+         name="amount"
+         type="number"
+         class="form-control"
+  (keyup)="doCalculations()">
+</div>
+<div fxLayout="column" fxLayoutGap="10px" class="totalTable mat-h2">
   <!--Tip Output-->
-  10%
-  {{ amount * .1 | currency }}
-  {{ amount + amount * .1 | currency }}
-  <br>
-  15%:
-  {{ amount * .15 | currency }}
-  {{ amount + amount * .15 | currency }}
-  <br>
-  20%:
-  {{ amount * .2 | currency }}
-  {{ amount + amount * .2 | currency }}
-  <br>
-  25%:
-  {{ amount * .25 | currency }}
-  {{ amount + amount * .25 | currency }}
+  <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngIf="tipCalculations">
+    <div class="totalCell" fxFlex="33">
+      Percent
+    </div>
+    <div class="totalCell" fxFlex="33">
+      Tip
+    </div>
+    <div class="totalCell" fxFlex="33">
+      Total
+    </div>
+
+  </div>
+  <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngFor="let tipCalculation of tipCalculations">
+    <div class="totalCell" fxFlex="33">
+      {{ tipCalculation.percent }}%
+    </div>
+    <div class="totalCell bg-shade" fxFlex="33">
+      {{ tipCalculation.tipAmount | currency }}
+    </div>
+    <div class="totalCell bg-shade" fxFlex="33">
+      {{ tipCalculation.tipTotal | currency }}
+    </div>
+
+  </div>
+
+</div>
+
 
 
 

@@ -6,6 +6,11 @@ body {
   background: url('assets/images/background.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: Helvetica, sans-serif;
+  color: white;
+}
+.bg-shade {
+  background-color: rgba(0,0,0,.4);
+  backdrop-filter: blur(4px);
 }
 
 html, body { height: 100%; }
