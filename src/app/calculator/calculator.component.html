@@ -1,5 +1,6 @@
 <div style="padding: 10px">
   <input matInput
+         style="height: 60px; font-size: 16pt; text-align: right"
          [(ngModel)]="amount"
          placeholder="Total Amount"
          id="amount"
@@ -10,26 +11,26 @@
 </div>
 <div fxLayout="column" fxLayoutGap="10px" class="totalTable mat-h2">
   <!--Tip Output-->
-  <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngIf="tipCalculations">
-    <div class="totalCell" fxFlex="33">
+  <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngIf="tipCalculations.length > 0">
+    <div class="totalCell" fxFlex fxLayoutAlign="center center">
       Percent
     </div>
-    <div class="totalCell" fxFlex="33">
+    <div class="totalCell" fxFlex fxLayoutAlign="center center">
       Tip
     </div>
-    <div class="totalCell" fxFlex="33">
+    <div class="totalCell" fxFlex fxLayoutAlign="center center">
       Total
     </div>
 
   </div>
   <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngFor="let tipCalculation of tipCalculations">
-    <div class="totalCell" fxFlex="33">
+    <div class="totalCell" fxFlex fxLayoutAlign="center center">
       {{ tipCalculation.percent }}%
     </div>
-    <div class="totalCell bg-shade" fxFlex="33">
+    <div class="totalCell bg-shade" fxFlex fxLayoutAlign="end center">
       {{ tipCalculation.tipAmount | currency }}
     </div>
-    <div class="totalCell bg-shade" fxFlex="33">
+    <div class="totalCell bg-shade" fxFlex fxLayoutAlign="end center">
       {{ tipCalculation.tipTotal | currency }}
     </div>
 

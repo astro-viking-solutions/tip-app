@@ -8,7 +8,7 @@ import {TipCalculation} from './tip-calculation';
 })
 export class CalculatorComponent implements OnInit {
   amount: number;
-  tipCalculations: TipCalculation [];
+  tipCalculations: TipCalculation[] = [];
 
   constructor() { }
 
@@ -17,7 +17,6 @@ export class CalculatorComponent implements OnInit {
 
   doCalculations(): void {
     this.tipCalculations = [];
-    console.log(this.amount);
     if (this.amount > 0) {
       this.doCalculation(.1);
       this.doCalculation(.15);

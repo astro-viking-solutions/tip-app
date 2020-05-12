@@ -16,4 +16,5 @@
   background-color: rgba(0,0,0,.2);
   text-shadow: none;
   backdrop-filter: blur(4px);
+  padding-right: 10px;
 }
