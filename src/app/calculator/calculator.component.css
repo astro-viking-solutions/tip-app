@@ -1,1 +1,20 @@
+.totalRow {
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
+.totalCell {
+  border-radius: 8px;
+}
+
+.totalTable {
+  text-align: center;
+  text-shadow: 0px 0px 6px rgba(0,0,0,1);
+}
+.bg-shade {
+  background-color: rgba(0,0,0,.2);
+  text-shadow: none;
+  backdrop-filter: blur(4px);
+  padding-right: 10px;
+}

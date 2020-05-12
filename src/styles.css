@@ -3,10 +3,18 @@ html, body {
   margin: 0;
 }
 body {
-  background: url('assets/images/background.jpg') no-repeat center center fixed;
+  background: url('assets/images/pinkMountains.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: Helvetica, sans-serif;
+  color: white;
 }
+.bg-shade {
+  background-color: rgba(0,0,0,.4);
+  backdrop-filter: blur(4px);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
