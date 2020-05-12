@@ -1,6 +1,6 @@
 <div style="padding: 10px">
   <input matInput
-         style="height: 60px; font-size: 16pt; text-align: right"
+         style="height: 60px; font-size: 18pt; text-align: right"
          [(ngModel)]="amount"
          placeholder="Total Amount"
          id="amount"
@@ -11,6 +11,9 @@
 </div>
 <div fxLayout="column" fxLayoutGap="10px" class="totalTable mat-h2">
   <!--Tip Output-->
+  <div *ngIf="amount >= 9999" fxLayoutAlign="center center">
+    Amount is too large.
+  </div>
   <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngIf="tipCalculations.length > 0">
     <div class="totalCell" fxFlex fxLayoutAlign="center center">
       Percent

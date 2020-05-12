@@ -17,7 +17,7 @@ export class CalculatorComponent implements OnInit {
 
   doCalculations(): void {
     this.tipCalculations = [];
-    if (this.amount > 0) {
+    if (this.amount > 0  && this.amount < 9999) {
       this.doCalculation(.1);
       this.doCalculation(.15);
       this.doCalculation(.2);
