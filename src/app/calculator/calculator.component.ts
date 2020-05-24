@@ -31,4 +31,9 @@ export class CalculatorComponent implements OnInit {
     tip.tipTotal = this.amount + tip.tipAmount;
     this.tipCalculations.push(tip);
   }
+
+  doReset(): void {
+    this.amount = 0;
+    this.doCalculations();
+  }
 }

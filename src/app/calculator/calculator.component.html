@@ -1,16 +1,19 @@
+<!--Total Amount Input Field-->
 <div style="padding: 10px">
-  <input matInput
-         style="height: 60px; font-size: 18pt; text-align: right"
-         [(ngModel)]="amount"
-         placeholder="Total Amount"
-         id="amount"
-         name="amount"
-         type="number"
-         class="form-control"
-  (keyup)="doCalculations()">
+  <form #inputForm="ngForm">
+    <input matInput
+           style="height: 60px; font-size: 18pt; text-align: right"
+           [(ngModel)]="amount"
+           placeholder="Total Amount"
+           id="amount"
+           name="amount"
+           type="number"
+           class="form-control"
+           (keyup)="doCalculations()">
+  </form>
 </div>
+<!--Tip Output Area-->
 <div fxLayout="column" fxLayoutGap="10px" class="totalTable mat-h2">
-  <!--Tip Output-->
   <div *ngIf="amount >= 9999" fxLayoutAlign="center center">
     Amount is too large.
   </div>
@@ -24,7 +27,6 @@
     <div class="totalCell" fxFlex fxLayoutAlign="center center">
       Total
     </div>
-
   </div>
   <div fxLayout="row" class="totalRow" fxLayoutGap="10px" *ngFor="let tipCalculation of tipCalculations">
     <div class="totalCell" fxFlex fxLayoutAlign="center center">
@@ -36,9 +38,15 @@
     <div class="totalCell bg-shade" fxFlex fxLayoutAlign="end center">
       {{ tipCalculation.tipTotal | currency }}
     </div>
-
   </div>
 
+  <!--Clear Button-->
+  <!-- mat-raised-button -->
+  <div>
+    <button mat-icon-button *ngIf="tipCalculations.length > 0" (click)="doReset(); inputForm.reset()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </div>
 </div>
 
 
